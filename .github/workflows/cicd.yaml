@@ -56,6 +56,9 @@ jobs:
             git pull origin main
           fi
 
+          sudo apt update
+          sudo apt upgrade
+          sudo apt install python3.10-venv
           cd Devlopment
 
           git pull origin main
