@@ -50,12 +50,17 @@ jobs:
 
           if [ ! -d "Devlopment" ]; then
             git clone https://github.com/shahriar0999/AutoCalc.git Devlopment
+          else
+            cd Devlopment
+            git reset --hard
+            git pull origin main
           fi
+
           cd Devlopment
 
           git pull origin main
 
-          python -m venv venv
+          python3 -m venv venv
           source venv/bin/activate
 
           pip install --upgrade pip
