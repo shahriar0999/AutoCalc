@@ -17,8 +17,9 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: '3.12'
-    - name: Install Dependencies
-      run: |
+        cache: 'pip'
+
+    - run: |
         python -m venv venv
         source venv/bin/activate
         pip install fastapi[all] pytest
