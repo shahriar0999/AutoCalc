@@ -45,7 +45,7 @@ jobs:
 
     - name: Deploy to EC2
       run: |
-        ssh -i ssh -i ~/.ssh/id_rsa ubuntu@${{ secrets.EC2_PUBLIC_IP }} << 'EOF'
+        ssh -i ssh -i ~/.ssh/id_rsa ubuntu@${{ secrets.EC2_PUBLIC_IP }}
 
           if [ ! -d "Devlopment" ]; then
             git clone https://github.com/shahriar0999/AutoCalc.git Devlopment
@@ -64,7 +64,7 @@ jobs:
           pkill -f "python main.py" || true
 
           nohup python main.py > fastapi.log 2>&1 &
-        EOF
+
 
       env:
         PRIVATE_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
