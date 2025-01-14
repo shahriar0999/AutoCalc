@@ -33,3 +33,8 @@ def test_divide_by_zero():
     response = client.post("/divide", json={"a": 20, "b": 0})
     assert response.status_code == 200
     assert response.json() == {"error": "Division by zero is not allowed"}
+
+def test_square():
+    response = client.post("/divide", json={"a": 0, "b": 0})
+    assert response.status_code == 200
+    assert response.json() == {"result": 1}

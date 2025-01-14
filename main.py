@@ -32,5 +32,9 @@ def div(data: Operation):
         return {"error": "Division by zero is not allowed"}
     return {"result": data.a / data.b}
 
+@app.post("/square")
+def square(data: Operation):
+    return {"result": data.a ** data.b}
+
 if __name__=="__main__":
     uvicorn.run(app="main:app", port=8000, reload=True, host="0.0.0.0")
