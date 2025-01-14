@@ -44,7 +44,7 @@ jobs:
       - name: Docker Tag
         id: version
         run: |
-          VERSION=v$(date + "%Y%m%d%H%M%S")
+          VERSION=v$(date +"%Y%m%d%H%M%S")
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       # Build the Docker Image
